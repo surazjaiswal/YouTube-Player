@@ -21,6 +21,8 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/purple_500"
+        android:textColor="@color/white"
         android:text="Play"
         android:textSize="18dp"
         android:elevation="5dp"
@@ -33,6 +35,8 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/purple_500"
+        android:textColor="@color/white"
         android:text="Shuffle"
         android:id="@+id/btn_shuffle"
         android:layout_weight="1"
@@ -47,6 +51,8 @@
         android:id="@+id/btn_openForm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/purple_500"
+        android:textColor="@color/white"
         android:textSize="18dp"
         android:elevation="5dp"
         android:textStyle="bold"

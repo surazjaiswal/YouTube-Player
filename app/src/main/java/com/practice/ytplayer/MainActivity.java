@@ -4,10 +4,13 @@ import static com.google.android.youtube.player.YouTubePlayer.*;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
@@ -21,9 +24,11 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class MainActivity extends YouTubeBaseActivity {
 
-    Button btn_play, btn_shuffle;
+    Button btn_play, btn_shuffle,btn_form;
     YouTubePlayerView youTubePlayerView;
     OnInitializedListener onInitializedListener;
+
+
 
     YouTubePlayer player;
     List<String> videos;
@@ -38,6 +43,8 @@ public class MainActivity extends YouTubeBaseActivity {
         btn_play = findViewById(R.id.btn_play);
         btn_shuffle = findViewById(R.id.btn_shuffle);
         youTubePlayerView = findViewById(R.id.yt_playerView);
+
+        btn_form = findViewById(R.id.btn_openForm);
 
         videos = Arrays.asList("IEF6mw7eK4s", "8CEJoCr_9UI", "344u6uK9qeQ", "3-nM3yNi3wg", "nB7nGcW9TyE");
         // "RlcY37n5j9M" this video id is not working
@@ -107,6 +114,14 @@ public class MainActivity extends YouTubeBaseActivity {
             public void onClick(View view) {
                 int rn = (int) (Math.random() * (videos.size()));
                 player.loadVideo(videos.get(rn));
+            }
+        });
+
+        btn_form.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,Form.class);
+                startActivity(intent);
             }
         });
 
